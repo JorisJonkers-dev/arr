@@ -29,7 +29,7 @@ applications:
         placement:
           memory: 1536Mi
           cpu: 500m
-        writablePaths: [/run, /tmp] # s6 runs its services from /run
+        writablePaths: [/tmp]
         probes:
           readiness: { path: /ping, port: 8989 }
           liveness: { path: /ping, port: 8989 }
@@ -56,7 +56,7 @@ applications:
         placement:
           memory: 1Gi
           cpu: 500m
-        writablePaths: [/run, /tmp] # s6 runs its services from /run
+        writablePaths: [/tmp]
         probes:
           readiness: { path: /ping, port: 7878 }
           liveness: { path: /ping, port: 7878 }
@@ -83,7 +83,7 @@ applications:
         placement:
           memory: 1Gi
           cpu: 300m
-        writablePaths: [/run, /tmp] # s6 runs its services from /run
+        writablePaths: [/tmp]
         probes:
           readiness: { path: /, port: 6767 }
           liveness: { path: /, port: 6767 }

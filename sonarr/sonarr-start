@@ -1,0 +1,8 @@
+#!/bin/sh
+# Starts sonarr as linuxserver's service script does when it runs as a non-root user, without s6:
+# s6 wants a /run owned by its own user, and a pod's /run is a root-owned emptyDir.
+set -eu
+umask 002
+export TERM=DUMB
+cd /app/sonarr/bin
+exec /app/sonarr/bin/Sonarr -nobrowser -data=/config

@@ -9,7 +9,7 @@ cleanup() { docker rm -f smoke-sonarr smoke-radarr smoke-bazarr >/dev/null 2>&1 
 trap cleanup EXIT
 cleanup
 
-writable=(--tmpfs '/run:uid=1000,gid=1000,exec' --tmpfs '/tmp:uid=1000,gid=1000,mode=1777'
+writable=(--tmpfs '/tmp:uid=1000,gid=1000,mode=1777'
   --tmpfs '/config:uid=1000,gid=1000' --tmpfs '/media/Completed:uid=1000,gid=1000'
   --tmpfs '/media/Series:uid=1000,gid=1000' --tmpfs '/media/Films:uid=1000,gid=1000')
 for spec in "${apps[@]}"; do
