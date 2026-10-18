@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/JorisJonkers-dev/arr/compare/v1.0.0...v1.0.1) (2026-10-18)
+
+
+### Bug Fixes
+
+* give each app's config a claim of its own name, so the three do not share one ([#4](https://github.com/JorisJonkers-dev/arr/issues/4)) ([c91f4b0](https://github.com/JorisJonkers-dev/arr/commit/c91f4b046673e7f41cbee7edc7fd5aa240b29382))
+
 ## 1.0.0 (2026-10-18)
 
 
