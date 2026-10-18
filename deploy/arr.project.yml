@@ -1,0 +1,96 @@
+# deploy-kit Project Intent for the arr stack: sonarr, radarr and bazarr, each built by this
+# repository to run as deploy (1000:1000) under a read-only root filesystem.
+#
+# Each mounts the media library's folders at the paths it has always used, so the root folders
+# and download paths in its database stay valid. Its config (SQLite and settings) is a claim of
+# its own that the platform's file-backup copies nightly. prowlarr and the download client stay
+# with the downloader.
+
+apiVersion: intent.jorisjonkers.dev/v1
+kind: Project
+schemaVersion: 1.0.0
+
+project: arr # the namespace derives: arr-system
+owner: joris
+
+applications:
+  - id: sonarr
+    processes:
+      - name: sonarr
+        lifecycle: application
+        image: sonarr
+        runtime: none
+        engine: files # keys the nightly copy of its config
+        provides:
+          http: 8989
+        libraries:
+          - { library: media, mountAt: /media/Completed, subPath: Completed, access: write }
+          - { library: media, mountAt: /media/Series, subPath: Series, access: write }
+        placement:
+          memory: 1536Mi
+          cpu: 500m
+        writablePaths: [/run, /tmp] # s6 runs its services from /run
+        probes:
+          readiness: { path: /ping, port: 8989 }
+          liveness: { path: /ping, port: 8989 }
+        startupBudget: 180s
+        cutover: interrupted # one pod on its config's ReadWriteOnce claim
+        volumes:
+          - claim: config
+            mountAt: /config
+            size: 10Gi
+            durability: recoverable # the library, the history and every setting
+
+  - id: radarr
+    processes:
+      - name: radarr
+        lifecycle: application
+        image: radarr
+        runtime: none
+        engine: files # keys the nightly copy of its config
+        provides:
+          http: 7878
+        libraries:
+          - { library: media, mountAt: /media/Completed, subPath: Completed, access: write }
+          - { library: media, mountAt: /media/Films, subPath: Films, access: write }
+        placement:
+          memory: 1Gi
+          cpu: 500m
+        writablePaths: [/run, /tmp] # s6 runs its services from /run
+        probes:
+          readiness: { path: /ping, port: 7878 }
+          liveness: { path: /ping, port: 7878 }
+        startupBudget: 180s
+        cutover: interrupted # one pod on its config's ReadWriteOnce claim
+        volumes:
+          - claim: config
+            mountAt: /config
+            size: 10Gi
+            durability: recoverable # the library, the history and every setting
+
+  - id: bazarr
+    processes:
+      - name: bazarr
+        lifecycle: application
+        image: bazarr
+        runtime: none
+        engine: files # keys the nightly copy of its config
+        provides:
+          http: 6767
+        libraries:
+          - { library: media, mountAt: /media/Series, subPath: Series, access: write }
+          - { library: media, mountAt: /media/Films, subPath: Films, access: write }
+        placement:
+          memory: 1Gi
+          cpu: 300m
+        writablePaths: [/run, /tmp] # s6 runs its services from /run
+        probes:
+          readiness: { path: /, port: 6767 }
+          liveness: { path: /, port: 6767 }
+        startupBudget: 180s
+        cutover: interrupted # one pod on its config's ReadWriteOnce claim
+        volumes:
+          - claim: config
+            mountAt: /config
+            size: 2Gi
+            durability: recoverable # the library, the history and every setting
