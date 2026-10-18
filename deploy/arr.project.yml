@@ -36,7 +36,7 @@ applications:
         startupBudget: 180s
         cutover: interrupted # one pod on its config's ReadWriteOnce claim
         volumes:
-          - claim: config
+          - claim: sonarr-config # a claim is named once per project, not per Process
             mountAt: /config
             size: 10Gi
             durability: recoverable # the library, the history and every setting
@@ -63,7 +63,7 @@ applications:
         startupBudget: 180s
         cutover: interrupted # one pod on its config's ReadWriteOnce claim
         volumes:
-          - claim: config
+          - claim: radarr-config # a claim is named once per project, not per Process
             mountAt: /config
             size: 10Gi
             durability: recoverable # the library, the history and every setting
@@ -90,7 +90,7 @@ applications:
         startupBudget: 180s
         cutover: interrupted # one pod on its config's ReadWriteOnce claim
         volumes:
-          - claim: config
+          - claim: bazarr-config # a claim is named once per project, not per Process
             mountAt: /config
             size: 2Gi
             durability: recoverable # the library, the history and every setting
