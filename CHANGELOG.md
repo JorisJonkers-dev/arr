@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/JorisJonkers-dev/arr/compare/v1.0.1...v1.0.2) (2026-10-18)
+
+
+### Bug Fixes
+
+* clear every setuid and setgid bit, so s6 starts as deploy where the pod allows privilege escalation ([#6](https://github.com/JorisJonkers-dev/arr/issues/6)) ([16cd2aa](https://github.com/JorisJonkers-dev/arr/commit/16cd2aaaa4a7a331572c674e31175c1b8072e9ec))
+
 ## [1.0.1](https://github.com/JorisJonkers-dev/arr/compare/v1.0.0...v1.0.1) (2026-10-18)
 
 
