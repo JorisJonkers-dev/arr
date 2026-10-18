@@ -14,7 +14,7 @@ writable=(--tmpfs '/run:uid=1000,gid=1000,exec' --tmpfs '/tmp:uid=1000,gid=1000,
   --tmpfs '/media/Series:uid=1000,gid=1000' --tmpfs '/media/Films:uid=1000,gid=1000')
 for spec in "${apps[@]}"; do
   read -r name image _ _ <<<"$spec"
-  docker run -d --name "smoke-$name" --read-only --cap-drop ALL --security-opt no-new-privileges \
+  docker run -d --name "smoke-$name" --read-only --cap-drop ALL \
     "${writable[@]}" -e TZ=Europe/Amsterdam "$image" >/dev/null
 done
 
