@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/JorisJonkers-dev/arr/compare/v1.0.2...v1.0.3) (2026-10-18)
+
+
+### Bug Fixes
+
+* start each app directly as deploy, without s6, which a pod's root-owned /run stops ([#8](https://github.com/JorisJonkers-dev/arr/issues/8)) ([5356cb2](https://github.com/JorisJonkers-dev/arr/commit/5356cb264dd0d6a16af715b56267d8dfb7292a56))
+
 ## [1.0.2](https://github.com/JorisJonkers-dev/arr/compare/v1.0.1...v1.0.2) (2026-10-18)
 
 
