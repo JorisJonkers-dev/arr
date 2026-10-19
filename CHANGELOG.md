@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/JorisJonkers-dev/arr/compare/v1.0.3...v1.0.4) (2026-10-19)
+
+
+### Bug Fixes
+
+* point sonarr's and radarr's TMPDIR at /tmp, since the image's sits below /run ([#12](https://github.com/JorisJonkers-dev/arr/issues/12)) ([dd4bb43](https://github.com/JorisJonkers-dev/arr/commit/dd4bb43bb9b4100c089228e7eda9e15d5fe5cbc6))
+
 ## [1.0.3](https://github.com/JorisJonkers-dev/arr/compare/v1.0.2...v1.0.3) (2026-10-18)
 
 
