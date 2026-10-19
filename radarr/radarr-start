@@ -3,5 +3,7 @@
 # s6 wants a /run owned by its own user, and a pod's /run is a root-owned emptyDir.
 set -eu
 umask 002
+# The image points TMPDIR below /run, which the read-only root does not hold; /tmp is writable.
+export TMPDIR=/tmp
 cd /app/radarr/bin
 exec /app/radarr/bin/Radarr -nobrowser -data=/config
