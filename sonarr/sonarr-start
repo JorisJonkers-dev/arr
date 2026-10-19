@@ -4,5 +4,7 @@
 set -eu
 umask 002
 export TERM=DUMB
+# The image points TMPDIR below /run, which the read-only root does not hold; /tmp is writable.
+export TMPDIR=/tmp
 cd /app/sonarr/bin
 exec /app/sonarr/bin/Sonarr -nobrowser -data=/config
