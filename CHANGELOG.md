@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/JorisJonkers-dev/arr/compare/v1.0.4...v1.1.0) (2026-10-19)
+
+
+### Features
+
+* declare the edges to prowlarr and qbittorrent, so each is reached by its Application Id ([#14](https://github.com/JorisJonkers-dev/arr/issues/14)) ([218bc4f](https://github.com/JorisJonkers-dev/arr/commit/218bc4ff2cb51d6c2f8ba36f357ba6a849c0e271))
+
 ## [1.0.4](https://github.com/JorisJonkers-dev/arr/compare/v1.0.3...v1.0.4) (2026-10-19)
 
 
