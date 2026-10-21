@@ -1,4 +1,4 @@
-FROM linuxserver/bazarr:1.5.6@sha256:047222423d6d8556a88581b189175bec57f286f120b52ba29c0390fe6babaa5a
+FROM linuxserver/bazarr:1.6.1@sha256:762f802274598da27255b2e5778f262b2b71b355a23e3812d9ee1520f8dbe37c
 
 # No setuid or setgid binary: the estate's pods do not yet forbid privilege escalation.
 RUN find / -xdev -perm /6000 -type f -exec chmod ug-s {} +
