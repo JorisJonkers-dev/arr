@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/JorisJonkers-dev/arr/compare/v1.1.0...v1.2.0) (2026-10-21)
+
+
+### Features
+
+* the images lock records each image's upstream version, and an upstream bump releases ([#19](https://github.com/JorisJonkers-dev/arr/issues/19)) ([3fd3518](https://github.com/JorisJonkers-dev/arr/commit/3fd3518579a97203b2afbbe9afbf96e1593516cb))
+
 ## [1.1.0](https://github.com/JorisJonkers-dev/arr/compare/v1.0.4...v1.1.0) (2026-10-19)
 
 
