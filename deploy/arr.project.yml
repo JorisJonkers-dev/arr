@@ -15,6 +15,19 @@ owner: joris
 
 applications:
   - id: sonarr
+    exposure:
+      # In public, behind the platform's sign-in.
+      - name: public
+        host: sonarr.jorisjonkers.dev
+        audience: authenticated
+        routes:
+          - { path: /, match: prefix, process: sonarr, surface: http }
+      # On the LAN, with no sign-in.
+      - name: lan
+        host: sonarr.jorisjonkers.dev
+        audience: lan
+        routes:
+          - { path: /, match: prefix, process: sonarr, surface: http }
     processes:
       - name: sonarr
         lifecycle: application
@@ -45,6 +58,19 @@ applications:
             durability: recoverable # the library, the history and every setting
 
   - id: radarr
+    exposure:
+      # In public, behind the platform's sign-in.
+      - name: public
+        host: radarr.jorisjonkers.dev
+        audience: authenticated
+        routes:
+          - { path: /, match: prefix, process: radarr, surface: http }
+      # On the LAN, with no sign-in.
+      - name: lan
+        host: radarr.jorisjonkers.dev
+        audience: lan
+        routes:
+          - { path: /, match: prefix, process: radarr, surface: http }
     processes:
       - name: radarr
         lifecycle: application
@@ -75,6 +101,19 @@ applications:
             durability: recoverable # the library, the history and every setting
 
   - id: bazarr
+    exposure:
+      # In public, behind the platform's sign-in.
+      - name: public
+        host: bazarr.jorisjonkers.dev
+        audience: authenticated
+        routes:
+          - { path: /, match: prefix, process: bazarr, surface: http }
+      # On the LAN, with no sign-in.
+      - name: lan
+        host: bazarr.jorisjonkers.dev
+        audience: lan
+        routes:
+          - { path: /, match: prefix, process: bazarr, surface: http }
     processes:
       - name: bazarr
         lifecycle: application
