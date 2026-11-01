@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/JorisJonkers-dev/arr/compare/v1.2.1...v1.3.0) (2026-10-30)
+
+
+### Features
+
+* declare sonarr's, radarr's and bazarr's public and LAN exposures, so the estate edge renders their routes ([#32](https://github.com/JorisJonkers-dev/arr/issues/32)) ([ffcfc66](https://github.com/JorisJonkers-dev/arr/commit/ffcfc666f8147fa17f8b66f3663b7402b56d40f4))
+
 ## [1.2.1](https://github.com/JorisJonkers-dev/arr/compare/v1.2.0...v1.2.1) (2026-10-21)
 
 
