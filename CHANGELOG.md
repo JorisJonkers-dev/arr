@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/JorisJonkers-dev/arr/compare/v1.3.0...v1.3.1) (2026-11-12)
+
+
+### Bug Fixes
+
+* **hygiene:** never cancel a run of the required hygiene checks ([#43](https://github.com/JorisJonkers-dev/arr/issues/43)) ([9f1c7c1](https://github.com/JorisJonkers-dev/arr/commit/9f1c7c1c7d3859221a9321370e3a71a18f0e88af))
+
 ## [1.3.0](https://github.com/JorisJonkers-dev/arr/compare/v1.2.1...v1.3.0) (2026-10-30)
 
 
