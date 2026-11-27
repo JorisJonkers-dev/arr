@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/JorisJonkers-dev/arr/compare/v1.3.1...v1.3.2) (2026-11-27)
+
+
+### Bug Fixes
+
+* **deps:** update linuxserver/bazarr docker tag to v1.6.2 ([#48](https://github.com/JorisJonkers-dev/arr/issues/48)) ([396f62c](https://github.com/JorisJonkers-dev/arr/commit/396f62cefac388be0ea3bb82f8d984ca16c4f6bb))
+
 ## [1.3.1](https://github.com/JorisJonkers-dev/arr/compare/v1.3.0...v1.3.1) (2026-11-12)
 
 
